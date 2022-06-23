@@ -1,28 +1,27 @@
 
-var welcome = window.prompt("Welcome to JS simple Calculator");
-var num1 = window.prompt("Enter a number");
-var num2 = window.prompt("Enter another number");
-var operator = window.prompt("Enter the operation you would like to perform (+ , - , / , * , % ,)");
+const operator = prompt('Enter Operator ( either + , -, * , / , % , ) : ');
 
-num1 = parseFloat(num1);
-num2 = parseFloat(num2);
+const number1 = parseFloat(prompt('Enter First Number: '));
+const number2 = parseFloat(prompt('Enter Second Number: '));
 
-let result = 0;
-if(isNaN(num1)|| isNaN(num2)){
-    alert("Wrong input! Refresh the page again and provide data!");
+let result;
+
+if (operator == '+') {
+    result = number1 + number2;
 }
-else{
-    if(operator == '+'){
-        result = num1 + num2;
-    }else if(operator == '-'){
-        result = num1 - num2;
-    }else if(operator == '*'){
-        result = num1 * num2;
-    }else if(operator == '/'){
-        result = num1 / num2;
-    }else if(operator == '%'){
-        result = num1 % num2;
-    }
-
-document.write(num1 + operator + num2 + '   =   ' + result);
+else if (operator == '-') {
+    result = number1 - number2; 
 }
+else if (operator == '*') {
+    result = number1 * number2;
+}
+else if (operator == '/') {
+    result = number1 / number2;
+}
+else if (operator == '%') {
+    result = number1 % number2;
+}
+
+document.write(number1 + operator + number2 + '     =    ' + result);
+
+alert("Refresh page to perform another operation!");
